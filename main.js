@@ -16,3 +16,18 @@ natalia.aprobarCurso('Curso de CSS Grid');
 console.log(natalia);
 
 
+//Prototipo
+function Student(name, age, cursosAprobados){
+    this.name = name;
+    this.age = age;
+    this.cursosAprobados = cursosAprobados;
+    //método 1 forma de crearlo
+    // this.aprobarCurso = function(nuevoCurso){
+    //     this.cursosAprobados.push(nuevoCurso);
+    // }
+}
+
+//otra forma de agregar métodos
+Student.prototype.aprobarCurso = function(nuevoCurso){
+    this.cursosAprobados.push(nuevoCurso);
+}
