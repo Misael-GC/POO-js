@@ -31,3 +31,19 @@ function Student(name, age, cursosAprobados){
 Student.prototype.aprobarCurso = function(nuevoCurso){
     this.cursosAprobados.push(nuevoCurso);
 }
+
+//Instancias del prototipo
+
+const reyna = new Student(
+    'Reyna Alejandra',
+    23,
+    [
+        'Int a los videojuego',
+        'Creación de personajes',
+    ]
+);
+
+
+reyna.aprobarCurso("Curso de Unreal Engine");
+
+console.log(reyna);
