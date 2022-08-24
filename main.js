@@ -2,21 +2,17 @@
 const natalia = {
     name: 'Natalia',
     age:20,
-    cursosAprovados:[
+    cursosAprobados:[
         'Curso Definitivo de HTML y CSS',
         'Curso Práctico de HTML y CSS',
     ],
+    aprobarCurso(nuevoCurso){
+        this.cursosAprobados.push(nuevoCurso);
+    },
 };
 
-console.log(natalia)
-
-//que pasa si natalia aprobo un curso
-natalia.cursosAprovados.push('Responsive Desing');
+natalia.aprobarCurso('Curso de CSS Grid');
 
 console.log(natalia);
 
-natalia.name ='Nath';
-natalia.age += 1;
-
-console.log(natalia);
 
