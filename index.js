@@ -1,62 +1,55 @@
-const juan1 = {
-  name: "JuanDC",
-  username: "juandc",
-  points: 100,
-  socialMedia: {
-    twitter: "fjuandc",
-    instagram: "fjuandc",
-    facebook: undefined,
-  },
-  approvedCourses: [
-    "Curso Definitivo de HTML y CSS",
-    "Curso Práctico de HTML y CSS",
-  ],
-  learningPaths: [
-    {
-      name: "Escuela de Desarrollo Web",
-      courses: [
-        "Curso Definitivo de HTML y CSS",
-        "Curso Práctico de HTML y CSS",
-        "Curso de Responsive Desing",
-      ],
-    },
-    {
-      name: "Escuela de Videojuegos",
-      courses: [
-        "Curso Introducción a la Producción de Vgs",
-        "Curso de Unreal Engine",
-        "Curso de Unity 3D",
-      ],
-    },
-  ],
-};
+class LearningPaths {
+    constructor
+}
 
-const miguelito1 = {
-  name: "Miguelito",
-  username: "miguelitofeliz",
-  points: 1000,
-  socialMedia: {
-    twitter: "miguelitofeliz",
-    instagram: "miguelito_feliz",
-    facebook: undefined,
-  },
-  approvedCourses: ["Curso DataBusiness", "Curso DataViz"],
-  learningPaths: [
+const escuelaWeb = new LearningPaths();  
+const escuelaData = new LearningPaths();  
+const escuelaVgs = new LearningPaths();  
+//creamos la clase
+class Student {
+    constructor({
+        name,
+        email,
+        userName,
+        twitter = undefined,
+        instagram = undefined,
+        facebook = undefined,
+        approvedCourses = [],
+        learningPaths = [],
+    })
     {
-      name: "Escuela de Desarrollo Web",
-      courses: [
-        "Curso Definitivo de HTML y CSS",
-        "Curso Práctico de HTML y CSS",
-        "Curso de Responsive Desing",
-      ],
-    },
-    {
-      name: "Escuela de Data Science",
-      courses: [
-        "Curso DataBusiness", 
-        "Curso DataViz", 
-        "Curso de Tableu"
-    ],
-    },
-  ],
-};
+        this.name = name;
+        this.email = email;
+        this.userName = userName;
+        this.socialMedia = {
+            twitter,
+            instagram,
+            facebook,
+        };
+        this.approvedCourses = approvedCourses;
+        this.learningPaths = learningPaths;
+    }
+}
+
+//creamos la instancia
+const juan2 = new Student({
+    name: 'JuanDC',
+    userName: 'juandc',
+    email: 'juanito@jdc.com',
+    twitter: 'fjuandc',
+    learningPaths:[
+        escuelaWeb,
+        escuelaVgs
+    ]
+})
+
+const miguelito2 = new Student({
+    name: 'Miguelito',
+    userName: 'juandc',
+    email: 'miguelito@jdc.com',
+    instagram: 'miguel_feliz',
+    learningPaths:[
+        escuelaData,
+        escuelaWeb
+    ]
+})
