@@ -1,10 +1,35 @@
 class LearningPaths {
-    constructor
+    constructor({
+        namePath,
+        cantidadCursos,
+        cursos =[],
+        examen =[],
+    }){
+        this.namePath = namePath;
+        this.cantidadCursos = cantidadCursos;
+        this.cursos = cursos;
+        this.examen = examen;
+    }
+    //metodo
+    addCourse(nuevoCurso){
+        this.cursos.push(nuevoCurso)
+    }
+    deleteCourse(curretCourse){
+        let indice = this.cursos.indexOf(curretCourse);
+        if(indice != -1)
+        this.cursos.splice(indice, 1);
+    }
 }
 
-const escuelaWeb = new LearningPaths();  
-const escuelaData = new LearningPaths();  
-const escuelaVgs = new LearningPaths();  
+
+
+const escuelaWeb = new LearningPaths({
+    namePath:'Desarrollo Web',
+    cantidadCursos: 115,
+    cursos: ['HTML', 'CSS', 'JS', 'REACT', 'TypeScript', 'Vue',  'Angular', 'Backend']
+});
+const escuelaData = new LearningPaths();
+const escuelaVgs = new LearningPaths();
 //creamos la clase
 class Student {
     constructor({
