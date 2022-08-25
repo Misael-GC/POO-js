@@ -55,10 +55,12 @@ class Student2 {
     constructor({
         name,
         age,
+        email,
         cursosAprobados = [],
     }){
         this.name = name;
         this.age = age;
+        this.email = email;
         this.cursosAprobados = cursosAprobados;
     }
 
@@ -76,6 +78,6 @@ const miguelito = new Student2({
 
 console.log(miguelito)
 
-miguelito.aprobarCurso('Curso de Tableu');
+// miguelito.aprobarCurso('Curso de Tableu');
 
 console.log(miguelito.cursosAprobados);
