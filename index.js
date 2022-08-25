@@ -28,8 +28,14 @@ const escuelaWeb = new LearningPaths({
     cantidadCursos: 115,
     cursos: ['HTML', 'CSS', 'JS', 'REACT', 'TypeScript', 'Vue',  'Angular', 'Backend']
 });
+
+escuelaWeb.addCourse('Basses de datos');
+escuelaWeb.deleteCourse('HTML');
+
 const escuelaData = new LearningPaths();
 const escuelaVgs = new LearningPaths();
+//ve a ejecutarlo en consola o has un console.log y corre el plugin .run
+console.log(escuelaWeb);
 //creamos la clase
 class Student {
     constructor({
