@@ -81,3 +81,4 @@ console.log(miguelito)
 // miguelito.aprobarCurso('Curso de Tableu');
 
 console.log(miguelito.cursosAprobados);
+
