@@ -47,3 +47,32 @@ const reyna = new Student(
 reyna.aprobarCurso("Curso de Unreal Engine");
 
 console.log(reyna);
+
+
+//Prototipos con la sintaxis de clases
+class Student2 {
+    //metodo que se ejecuta cuando creamos la instancia del prototipo/clase
+    constructor(name, age, cursosAprobados){
+        this.name = name;
+        this.age = age;
+        this.cursosAprobados = cursosAprobados;
+    }
+
+    //creamos métodos
+    aprobarCurso(nuevoCursito){
+        this.cursosAprobados.push(nuevoCursito)
+    }
+}
+
+const miguelito = new Student2(
+    'Miguel',
+    28,
+    [
+        'Curso Análisis de Negocios para Ciencia de Datos',
+        'Curso de Principios de visualización de Datos'
+    ]
+)
+
+miguelito.aprobarCurso('Curso de Tableu');
+
+console.log(miguelito.cursosAprobados);
