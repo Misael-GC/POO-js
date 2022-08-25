@@ -32,12 +32,24 @@ const escuelaWeb = new LearningPaths({
 escuelaWeb.addCourse('Basses de datos');
 escuelaWeb.deleteCourse('HTML');
 
-const escuelaData = new LearningPaths();
-const escuelaVgs = new LearningPaths();
+const escuelaData = new LearningPaths({
+    namePath:'Data Science',
+    cantidadCursos: 35,
+    cursos: ['Python', 'Excel', 'SQL', 'Tableu', 'BI', 'MySQL',  'Datos', 'Backend']
+});
+
+const escuelaVgs = new LearningPaths({
+    namePath:'Escuela de videojuegos',
+    cantidadCursos: 95,
+    cursos: ['curso1', 'curso2', 'curso3']
+});
+
+
+
 //ve a ejecutarlo en consola o has un console.log y corre el plugin .run
 console.log(escuelaWeb);
 //creamos la clase
-class Student {
+class Students {
     constructor({
         name,
         email,
@@ -63,7 +75,7 @@ class Student {
 }
 
 //creamos la instancia
-const juan2 = new Student({
+const juan2 = new Students({
     name: 'JuanDC',
     userName: 'juandc',
     email: 'juanito@jdc.com',
@@ -74,7 +86,7 @@ const juan2 = new Student({
     ]
 })
 
-const miguelito2 = new Student({
+const miguelito2 = new Students({
     name: 'Miguelito',
     userName: 'juandc',
     email: 'miguelito@jdc.com',
@@ -83,4 +95,6 @@ const miguelito2 = new Student({
         escuelaData,
         escuelaWeb
     ]
-})
+});
+
+console.log(miguelito2)
