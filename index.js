@@ -6,7 +6,6 @@ class Classe {
         this.preguntas = preguntas,
         this.recursos = recursos
     }
-
 }
 
 Classe.prototype.addComment = function(newComment){
@@ -25,6 +24,24 @@ class Course {
     this.name = name;
     this.classes = classes;
   }
+
+  //getters y setters
+  get name(){
+    return this.name;
+  }
+
+  changeName(nuevoNombre){
+    this._name = nuevoNombre
+  }
+
+  set name(nuevoNombrecito){
+    if(nuevoNombrecito === 'Curso Malito de Programación Básica'){
+      console.error('Web... no')
+    }else{
+      this._name = nuevoNombrecito;
+    }
+  }
+  
 }
 
 
@@ -34,6 +51,9 @@ const cursoProgBasica = new Course({
   name: "Curso Gratis de Programación Básica",
 });
 
+cursoProgBasica.name
+// cursoProgBasica.changeName('newName')
+//Curso Gratis de Programación Básica
 class LearningPaths {
   constructor({ namePath, cantidadCursos, cursos = [], examen = [] }) {
     this.namePath = namePath;
