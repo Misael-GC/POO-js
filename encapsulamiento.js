@@ -1,15 +1,29 @@
 class Classe {
     constructor({ name, comment = [], preguntas, recursos}){
-        this.name = name,
+        this._name = name,
         this.comment = comment,
         this.preguntas = preguntas,
         this.recursos = recursos
     }
+
+    //getters y setters
+    get name(){
+      return this._name;
+    }
+    set name(nuevo_Nombre){
+      if(nuevo_Nombre === 'Clase aburrida'){
+        console.warn('Web... no')
+      }else{
+        this._name = nuevo_Nombre;
+      }
+    }
 }
+
 
 Classe.prototype.addComment = function(newComment){
     this.comment.push(newComment);
 }
+
 
 const classPOO = new Classe({
     name:'Clase de POO',
@@ -17,20 +31,19 @@ const classPOO = new Classe({
     preguntas:['crear_objetos', 'de_preguntas_students'],
     recursos:'Link'
 });
+
+
+
 //prototipo de un curso
 class Course {
   constructor({ name, classes = [] }) {
-    this.name = name;
+    this._name = name;
     this.classes = classes;
   }
 
   //getters y setters
   get name(){
-    return this.name;
-  }
-
-  changeName(nuevoNombre){
-    this._name = nuevoNombre
+    return this._name;
   }
 
   set name(nuevoNombrecito){
@@ -41,3 +54,13 @@ class Course {
     }
   }
 }
+
+//Instancia de la clase Course
+
+const cursoProgBasica = new Course({
+    name: "Curso Gratis de Programación Básica",
+  });
+  
+  cursoProgBasica.name
+  // cursoProgBasica.changeName('newName')
+  //Curso Gratis de Programación Básica

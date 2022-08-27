@@ -1,18 +1,6 @@
-
-
-
-//Instancia de la clase Course
-
-const cursoProgBasica = new Course({
-  name: "Curso Gratis de Programación Básica",
-});
-
-cursoProgBasica.name
-// cursoProgBasica.changeName('newName')
-//Curso Gratis de Programación Básica
 class LearningPaths {
   constructor({ namePath, cantidadCursos, cursos = [], examen = [] }) {
-    this.namePath = namePath;
+    this._namePath = namePath;
     this.cantidadCursos = cantidadCursos;
     this.cursos = cursos;
     this.examen = examen;
@@ -24,6 +12,18 @@ class LearningPaths {
   deleteCourse(curretCourse) {
     let indice = this.cursos.indexOf(curretCourse);
     if (indice != -1) this.cursos.splice(indice, 1);
+  }
+
+  get namePath(){
+    return this._namePath;
+  }
+
+  set namePath(nuevoNamePath){
+    if(nuevoNamePath === 'Random'){
+      console.warn('Web... no')
+    }else{
+      this._name = nuevoNamePath;
+    }
   }
 }
 

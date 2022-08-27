@@ -18,9 +18,9 @@ console.log(natalia);
 
 //Prototipo
 function Student(name, age, cursosAprobados){
-    this.name = name;
+    this._name = name;
     this.age = age;
-    this.cursosAprobados = cursosAprobados;
+    this._cursosAprobados = cursosAprobados;
     //método 1 forma de crearlo
     // this.aprobarCurso = function(nuevoCurso){
     //     this.cursosAprobados.push(nuevoCurso);
@@ -30,6 +30,19 @@ function Student(name, age, cursosAprobados){
 //otra forma de agregar métodos
 Student.prototype.aprobarCurso = function(nuevoCurso){
     this.cursosAprobados.push(nuevoCurso);
+
+Student.prototype = {
+    get name(){
+        return this._name;
+    },
+    set name(nuevo_Nombre_student){
+        if (nuevo_Nombre_student === 'Random') {
+            console.warn('nombre no permitido');
+        } else {
+            this._name = nuevo_Nombre_student;
+        }
+    }
+}
 }
 
 //Instancias del prototipo
@@ -47,6 +60,9 @@ const reyna = new Student(
 reyna.aprobarCurso("Curso de Unreal Engine");
 
 console.log(reyna);
+
+
+
 
 
 //Prototipos con la sintaxis de clases
@@ -81,4 +97,3 @@ console.log(miguelito)
 // miguelito.aprobarCurso('Curso de Tableu');
 
 console.log(miguelito.cursosAprobados);
-
