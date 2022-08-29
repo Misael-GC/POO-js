@@ -64,36 +64,3 @@ console.log(reyna);
 
 
 
-
-//Prototipos con la sintaxis de clases
-class Student2 {
-    //metodo que se ejecuta cuando creamos la instancia del prototipo/clase
-    constructor({
-        name,
-        age,
-        email,
-        cursosAprobados = [],
-    }){
-        this.name = name;
-        this.age = age;
-        this.email = email;
-        this.cursosAprobados = cursosAprobados;
-    }
-
-    //creamos métodos
-    aprobarCurso(nuevoCursito){
-        this.cursosAprobados.push(nuevoCursito)
-    }
-}
-
-const miguelito = new Student2({
-    email: 'miguelitogmail.com',
-    age: 28,
-    name: 'Miguel',
-})
-
-console.log(miguelito)
-
-// miguelito.aprobarCurso('Curso de Tableu');
-
-console.log(miguelito.cursosAprobados);
