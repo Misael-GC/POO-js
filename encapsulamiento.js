@@ -34,33 +34,5 @@ const classPOO = new Classe({
 
 
 
-//prototipo de un curso
-class Course {
-  constructor({ name, classes = [] }) {
-    this._name = name;
-    this.classes = classes;
-  }
 
-  //getters y setters
-  get name(){
-    return this._name;
-  }
-
-  set name(nuevoNombrecito){
-    if(nuevoNombrecito === 'Curso Malito de Programación Básica'){
-      console.error('Web... no')
-    }else{
-      this._name = nuevoNombrecito;
-    }
-  }
-}
-
-//Instancia de la clase Course
-
-const cursoProgBasica = new Course({
-    name: "Curso Gratis de Programación Básica",
-  });
-  
-  cursoProgBasica.name
-  // cursoProgBasica.changeName('newName')
   //Curso Gratis de Programación Básica
