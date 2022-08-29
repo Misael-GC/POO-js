@@ -1,3 +1,30 @@
+//polimorfismo
+class Comment{
+    constructor({
+        content, 
+        studentName, 
+        studentRole = "estudiante"
+    }){
+      this.content = content;
+      this.studentName = studentName;
+      this.studentRole = studentRole;
+      this.likes = 0;
+    }
+  
+  //método
+    publicar(){
+      console.log(this.studentName +" (" + this.studentRole + ")" );
+      console.log(this.likes + ' likes');
+      console.log(this.content);
+      //FrancoPig (estudiante)
+      //0 likes
+      //este es el comentario
+    }
+  }
+
+
+
+
 //prototipo de un curso
 class Course {
   constructor({ 
@@ -63,6 +90,14 @@ class Student2 {
   aprobarCurso(nuevoCursito) {
     this.cursosAprobados.push(nuevoCursito);
   }
+
+  publicarComentario(commentContent){
+    const comment = new Comment({
+        content: commentContent,
+        studentName: this.name,
+    });
+    comment.publicar();
+  }
 }
 
 class FreeStudent extends Student2 {
@@ -102,6 +137,23 @@ class ExpertStudent extends Student2 {
   }
 }
 
+class TeacherStudent extends Student2 {
+    constructor(props) {
+      super(props);
+    }
+    aprobarCurso(nuevoCursito) {
+      this.cursosAprobados.push(nuevoCursito);
+    }
+    publicarComentario(commentContent){
+        const comment = new Comment({
+            content: commentContent,
+            studentName: this.name,
+            studentRole:'Profesor',
+    });
+    comment.publicar();
+  }
+}
+
 const miguelito = new FreeStudent({
   email: "miguelitogmail.com",
   age: 28,
@@ -120,4 +172,12 @@ const juan = new BasicStudent({
     email: "juanitogmail.com",
     age: 28,
     name: "juanDC",
+  });
+
+  //creamos a un nuevo estudiante
+  const freddy = new TeacherStudent({
+    name: "Freddy Vega",
+    username: "freddier",
+    email: "fp.asimov@outlook.com",
+    twitter: "freddier",
   });
